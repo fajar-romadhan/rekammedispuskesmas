@@ -25,7 +25,12 @@ if (!$koneksi) {
 // PENGATURAN BASE URL (OTOMATIS MENYESUAIKAN DOMAIN / SUBFOLDER HOSTING)
 // ==========================================================================
 // Anda juga bisa mengisi manual, contoh: $main_url = "https://rekammedis.namadomain.com/";
-$isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443);
+$isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)
+    || (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) === 'https')
+    || (!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && strtolower($_SERVER['HTTP_X_FORWARDED_SSL']) === 'on')
+    || (isset($_SERVER['REQUEST_SCHEME']) && strtolower($_SERVER['REQUEST_SCHEME']) === 'https');
+
 $protocol = $isHttps ? "https://" : "http://";
 $hostName = $_SERVER['HTTP_HOST'] ?? 'localhost';
 $docRoot  = str_replace('\\', '/', realpath($_SERVER['DOCUMENT_ROOT'] ?? ''));
