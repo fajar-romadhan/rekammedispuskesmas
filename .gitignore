@@ -1,0 +1,13 @@
+# File sampah sistem & OS
+.DS_Store
+Thumbs.db
+
+# Folder backup / tidak terpakai
+quixlab-master/
+rekammedispuskesmas/
+
+# File arsip & backup database (jangan di-push publik)
+*.zip
+*.rar
+*.tar.gz
+*.sql
