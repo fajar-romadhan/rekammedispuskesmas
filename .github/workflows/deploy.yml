@@ -28,5 +28,6 @@ jobs:
             **/.github/**
             quixlab-master/**
             rekammedispuskesmas/**
+            asset/quixlab/plugins/**
             *.zip
             *.sql
