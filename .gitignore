@@ -1,13 +1,59 @@
-# File sampah sistem & OS
+# ==============================================================================
+# .gitignore - Sistem Rekam Medis Puskesmas Mendis (Professional Standard)
+# ==============================================================================
+
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+Desktop.ini
 
-# Folder backup / tidak terpakai
-quixlab-master/
-rekammedispuskesmas/
+# Database dumps & exports (Sensitif & Tidak untuk Publik)
+*.sql
+*.sql.gz
+*.sqlite
+*.sqlite3
+*.db
 
-# File arsip & backup database (jangan di-push publik)
+# Compressed archives & backup files
 *.zip
 *.rar
+*.tar
 *.tar.gz
-*.sql
+*.7z
+*.bak
+*.old
+*.backup
+
+# Environment & credentials
+.env
+.env.*
+!.env.example
+
+# Logs & error traces
+*.log
+error_log
+debug.log
+
+# IDE & Editor specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.user
+*.swp
+*~
+
+# Temporary & cache files
+tmp/
+temp/
+cache/
+quixlab-master/
+rekammedispuskesmas/
