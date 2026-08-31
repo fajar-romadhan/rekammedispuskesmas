@@ -1,4 +1,3 @@
-```php
 <?php
 
 session_start();
@@ -433,3 +432,4 @@ require "../template/footer.php";
 
 ?>
 ```
+ 
